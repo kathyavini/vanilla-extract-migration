@@ -1,4 +1,5 @@
 import { globalStyle } from '@vanilla-extract/css';
+import { vars } from './theme.css';
 
 // Josh Comeau's CSS Reset
 globalStyle('*', {
@@ -31,4 +32,55 @@ globalStyle('p, h1, h2, h3, h4, h5, h6', {
 
 globalStyle('#root', {
   isolation: 'isolate',
+});
+
+// Other globals
+globalStyle('html, body, #root, #app', {
+  minWidth: '100vw',
+  minHeight: '100vh',
+});
+
+globalStyle('#app', {
+  fontFamily: vars.fonts.body,
+  background: vars.colors.background,
+  color: vars.colors.text.normal,
+});
+
+globalStyle('h1, h2, h3, h4, h5, h5', {
+  fontFamily: vars.fonts.heading,
+});
+
+globalStyle('a', {
+  color: vars.colors.tertiaryContrast,
+  textDecoration: 'none',
+});
+
+globalStyle('a:hover', {
+  textDecoration: 'underline',
+});
+
+globalStyle('a:visited', {
+  color: vars.colors.tertiaryContrast,
+});
+
+// App container properties
+globalStyle('#app', {
+  padding: vars.sizes.respXL,
+  width: '100%',
+  display: 'flex',
+  flexFlow: 'column nowrap',
+  alignItems: 'center',
+  justifyContent: 'center',
+  position: 'relative',
+  gap: vars.sizes.respXL,
+  textAlign: 'center',
+});
+
+// To be move to a more appropriate place later
+globalStyle('form', {
+  width: 'min(100% - 2rem, 50rem)',
+  height: '100%',
+  display: 'flex',
+  flexFlow: 'column nowrap',
+  position: 'relative',
 });
