@@ -5,10 +5,6 @@ import {
 } from '@vanilla-extract/css';
 
 const root = createGlobalTheme(':root', {
-  breakpoints: {
-    sm: '650px',
-    md: '860px',
-  },
   fonts: {
     heading: '"Playfair Display", serif',
     body: '"Work Sans", sans-serif',
@@ -19,7 +15,16 @@ const root = createGlobalTheme(':root', {
     respL: 'clamp(2rem, 1rem + 4vw, 4rem)',
     respXL: 'clamp(3rem, 2rem + 4vw, 5rem)',
   },
+  borders: {
+    sm: '3px',
+    md: '6px',
+  },
 });
+
+export const breakpoints = {
+  sm: '650px',
+  md: '860px',
+};
 
 const colors = createThemeContract({
   main: '', // really I'd like to call this text
@@ -56,7 +61,7 @@ export const darkTheme = createTheme(colors, {
   secondaryContrast: '#404040',
   tertiaryContrast: '#b7afa8',
   background: '#180f00',
-  white: '#ffffff',
+  white: '#000000', // sorry
   text: {
     normal: '#ece2cc',
     invert: '#303030',

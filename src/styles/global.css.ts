@@ -73,7 +73,6 @@ globalStyle('#app', {
   justifyContent: 'center',
   position: 'relative',
   gap: vars.sizes.respXL,
-  textAlign: 'center',
 });
 
 // To be move to a more appropriate place later

@@ -1,7 +1,7 @@
 import { style, styleVariants, globalStyle } from '@vanilla-extract/css';
-import { vars } from './theme.css';
+import { vars, breakpoints } from './theme.css';
 
-const buttonBase = style({
+export const buttonBase = style({
   border: `1px solid ${vars.colors.main}`,
   padding: '0.7rem 2rem', // good use for tokens later
 
@@ -15,7 +15,7 @@ const buttonBase = style({
   },
 });
 
-// I would like to make the primary the default here though!
+// Probably button is going to become a recipe rather than styleVariants...
 export const button = styleVariants({
   primary: [
     buttonBase,
@@ -79,6 +79,31 @@ export const button = styleVariants({
   ],
 });
 
+export const uploadButton = style({
+  selectors: {
+    '&::file-selector-button': {
+      border: `1px solid ${vars.colors.main}`,
+      padding: '0.5rem 0.7rem', // good use for tokens later
+      borderRadius: vars.borders.md,
+
+      fontFamily: vars.fonts.body,
+      fontSize: '1rem', // tokens!
+
+      backgroundColor: vars.colors.main,
+      color: vars.colors.background, //
+    },
+
+    '&::file-selector-button:hover': {
+      backgroundColor: vars.colors.secondary,
+      color: vars.colors.background,
+      border: `1px solid ${vars.colors.secondary}`,
+    },
+    '&::file-selector-button:active': {
+      filter: 'brightness(1.1)',
+    },
+  },
+});
+
 export const badge = style({
   background: vars.colors.contrast,
   color: vars.colors.white,
@@ -100,4 +125,41 @@ export const badge = style({
 // Will be applied automatically when badge is imported
 globalStyle(`${badge} a`, {
   color: vars.colors.secondaryContrast,
+});
+
+export const image = style({
+  height: 150,
+  width: 150,
+  objectFit: 'cover',
+  borderRadius: vars.borders.sm,
+
+  '@media': {
+    [`screen and (min-width: ${breakpoints.md})`]: {
+      width: 250,
+      height: 250,
+    },
+  },
+});
+
+const dividerBase = style({
+  borderTop: `1px solid ${vars.colors.text.normal}`,
+  width: '100%',
+  marginBlock: '0.7rem',
+});
+
+export const divider = styleVariants({
+  full: [
+    dividerBase,
+    {
+      width: '100%',
+      marginBlock: '0.7rem',
+    },
+  ],
+  small: [
+    dividerBase,
+    {
+      width: '2rem',
+      marginBlock: '0.5rem',
+    },
+  ],
 });
