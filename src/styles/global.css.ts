@@ -8,6 +8,10 @@ globalStyle('*', {
   // border: '1px solid salmon',
 });
 
+globalStyle('html', {
+  scrollBehavior: 'smooth',
+});
+
 globalStyle('html, body', {
   height: '100%',
 });
@@ -61,25 +65,4 @@ globalStyle('a:hover', {
 
 globalStyle('a:visited', {
   color: vars.colors.tertiaryContrast,
-});
-
-// App container properties
-globalStyle('#app', {
-  padding: vars.sizes.respXL,
-  width: '100%',
-  display: 'flex',
-  flexFlow: 'column nowrap',
-  alignItems: 'center',
-  justifyContent: 'center',
-  position: 'relative',
-  gap: vars.sizes.respXL,
-});
-
-// To be move to a more appropriate place later
-globalStyle('form', {
-  width: 'min(100% - 2rem, 50rem)',
-  height: '100%',
-  display: 'flex',
-  flexFlow: 'column nowrap',
-  position: 'relative',
 });

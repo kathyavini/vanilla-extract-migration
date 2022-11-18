@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { button, badge, image, divider } from '../styles/style.css';
-import { stack, row } from '../styles/recipes.css';
+import { button, badge, divider } from '../styles/style.css';
+import { stack } from '../styles/recipes.css';
 import {
   responsiveContainer,
   tableRow,

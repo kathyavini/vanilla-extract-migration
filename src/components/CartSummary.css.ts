@@ -1,9 +1,7 @@
-import { style, styleVariants, globalStyle } from '@vanilla-extract/css';
+import { style, globalStyle } from '@vanilla-extract/css';
 import { vars, breakpoints } from '../styles/theme.css';
-import { row } from '../styles/recipes.css';
 
 export const responsiveContainer = style({
-  marginTop: '2rem',
   display: 'flex',
   flexFlow: 'column nowrap',
   rowGap: '2rem',
