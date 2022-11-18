@@ -34,6 +34,7 @@ const colors = createThemeContract({
   tertiaryContrast: '',
   background: '',
   white: '', //
+  black: '',
   text: {
     normal: '',
     invert: '', // within hover effects
@@ -48,6 +49,7 @@ export const lightTheme = createTheme(colors, {
   tertiaryContrast: '#745d4a',
   background: '#faf4e8',
   white: '#ffffff',
+  black: '#000000',
   text: {
     normal: '#303030',
     invert: '#ece2cc',
@@ -62,6 +64,7 @@ export const darkTheme = createTheme(colors, {
   tertiaryContrast: '#b7afa8',
   background: '#180f00',
   white: '#000000', // sorry
+  black: '#ffffff',
   text: {
     normal: '#ece2cc',
     invert: '#303030',

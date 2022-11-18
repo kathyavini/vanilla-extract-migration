@@ -73,5 +73,5 @@ globalStyle(`${pageElements} h2:first-child`, {
 
 globalStyle(`${pageElements} h3`, {
   fontSize: '2rem',
-  marginTop: '5vh',
+  marginTop: '2vh',
 });

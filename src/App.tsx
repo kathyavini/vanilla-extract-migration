@@ -14,7 +14,7 @@ import {
 } from './styles/App.css';
 
 import { ShopItem } from './components/ShopItem';
-import { RecipeForm } from './components/RecipeForm';
+import { Form } from './components/Form';
 import { CartSummary } from './components/CartSummary';
 
 import puer from './assets/puer.jpg';
@@ -29,7 +29,7 @@ function App() {
       className={[isDarkTheme ? darkTheme : lightTheme, appContainer].join(
         ' '
       )}>
-      <div className={welcomeScreen}>
+      <header className={welcomeScreen}>
         <div>
           <h1 className={pageTitle}>Chah</h1>
           <h2 className={pageSubtitle}>(once again)</h2>
@@ -40,7 +40,7 @@ function App() {
             Continue
           </button>
         </a>
-      </div>
+      </header>
 
       <main
         id="main"
@@ -80,10 +80,10 @@ function App() {
         <CartSummary />
 
         <section className={pageElements}>
-          <h2>Page Elements to Style:</h2>
+          <h2>Page Elements to Style</h2>
           <div className={stack({ gap: 'lg' })}>
             <div>
-              <h3>Stacks and Buttons:</h3>
+              <h3>Stacks and Buttons</h3>
               <p>
                 The container for this section is a stack with gap set to "lg"
               </p>
@@ -112,8 +112,8 @@ function App() {
               <button className={button.animated}>Animated button</button>
             </div>
           </div>
-          <h3>Some form styling:</h3>
-          <RecipeForm />
+          <h3 id="form">Some form styling</h3>
+          <Form />
         </section>
       </main>
     </div>

@@ -3,10 +3,10 @@ import { vars, breakpoints } from './theme.css';
 
 export const buttonBase = style({
   border: `1px solid ${vars.colors.main}`,
-  padding: '0.7rem 2rem', // good use for tokens later
+  padding: '0.7rem 2rem',
 
   fontFamily: vars.fonts.body,
-  fontSize: '1rem', // tokens!
+  fontSize: '1rem',
   fontWeight: 300,
   textTransform: 'uppercase',
 
@@ -15,7 +15,6 @@ export const buttonBase = style({
   },
 });
 
-// Probably button is going to become a recipe rather than styleVariants...
 export const button = styleVariants({
   primary: [
     buttonBase,
@@ -33,7 +32,7 @@ export const button = styleVariants({
     buttonBase,
     {
       backgroundColor: vars.colors.main,
-      color: vars.colors.background, // would like to do something different only in dark mode; any ideas how?
+      color: vars.colors.background,
 
       ':hover': {
         backgroundColor: vars.colors.secondary,
@@ -79,18 +78,19 @@ export const button = styleVariants({
   ],
 });
 
+// Because this button has to be targeted with the selectors key, I can't figure out a way to make use of the previously defined button styles unfortunately
 export const uploadButton = style({
   selectors: {
     '&::file-selector-button': {
       border: `1px solid ${vars.colors.main}`,
-      padding: '0.5rem 0.7rem', // good use for tokens later
+      padding: '0.5rem 0.7rem',
       borderRadius: vars.borders.md,
 
       fontFamily: vars.fonts.body,
-      fontSize: '1rem', // tokens!
+      fontSize: '1rem',
 
       backgroundColor: vars.colors.main,
-      color: vars.colors.background, //
+      color: vars.colors.background,
     },
 
     '&::file-selector-button:hover': {
@@ -109,7 +109,7 @@ export const badge = style({
   color: vars.colors.white,
 
   fontSize: '1rem',
-  padding: '1rem 2rem', // tokens
+  padding: '1rem 2rem',
   fontWeight: 300,
   textAlign: 'center',
   lineHeight: '1.5rem',
@@ -119,10 +119,9 @@ export const badge = style({
   justifyContent: 'space-around',
   alignItems: 'center',
 
-  rowGap: '0.7rem', // I made this into a variant but never used it?
+  rowGap: '0.7rem',
 });
 
-// Will be applied automatically when badge is imported
 globalStyle(`${badge} a`, {
   color: vars.colors.secondaryContrast,
 });
